@@ -5,7 +5,7 @@ Discord bot made for the NSDAP Server.
 
 These applications are required to run the bot:
 
-[Node.js]https://nodejs.org/en/
+[Node.js](https://nodejs.org/en/)
 
 These javascript libraries are also needed for the bot to work:
 
@@ -23,7 +23,7 @@ npm install xml2js
 
 ## Installation
 
-First run the install-bot.bat, which installs the required prerequisites. You now need to add your bot token the Config file located in the Config folder. Follow this [guide]https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token to get your token.
+First run the install-bot.bat, which installs the required prerequisites. You now need to add your bot token the Config file located in the Config folder. Follow this [guide](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token) to get your token.
 
 ## How to
 
