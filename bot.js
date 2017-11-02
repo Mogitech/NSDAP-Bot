@@ -102,12 +102,18 @@ client.on('message', msg => {
                 isReady = false;
                 var voiceChannel = msg.member.voiceChannel;
                 var bjornXml = xmlTools.getXmlFromFile(Resources.getResource('quotes'));
-                var audioQuotePath = xmlDoc.quotes.quote[0].audioKey;
+                //var audioQuotePath = xmlDoc.quotes.quote[Utilities.randomNumber(xmlDoc['quotes']['quote'].length)].$.audiokey;
+                var audioQuotePath = bjornXml.quotes.quote[1].$.audiokey;
 
                 voiceChannel.join().then(connection =>
                 {
-                    const dispatcher = connection.playFile()
-                });
+                    const dispatcher = connection.playFile(audioQuotePath);
+                    dispatcher.on('end', end => {
+                        voiceChannel.leave();
+                    });
+                }).catch(err => console.log(err));
+                isReady = true;
+                break;
             case 'randomgame':
                 var ranNum = Utilities.randomNumber(args.length);
                 var game = args[ranNum]
@@ -123,6 +129,7 @@ client.on('message', msg => {
         }
     } catch (err) {
         logger.error(err.message);
+        isReady = true;
     }
 });
 

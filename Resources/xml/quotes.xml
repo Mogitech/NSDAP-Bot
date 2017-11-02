@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <quotes>
     <quote audiokey="Resources/Images/quotes/makker.mp3">Makker</quote>
-    <quote>Tænk på børnene?</quote>
+    <quote audiokey="Resources/Images/quotes/test.wav">Tænk på børnene?</quote>
     <quote>Fuck børnene!</quote>
     <quote>Send nudes</quote>
     <quote>Hvorfor er du sådan her?</quote>
@@ -37,4 +37,7 @@
     <quote>Har du ikke set den mel?</quote>
     <quote>Jeg vil gerne ind i dig!</quote>
     <quote>*sang* *sang* *skinger sang* *distortion* *sang*</quote>
+    <quote>Bare rolig, jeg har dig makker!</quote>
+    <quote>Jeg afliver {indsæt hvad Bjørn er sur på her}</quote>
+    <quote>Tak skat!</quote>
 </quotes> 

@@ -1,3 +1,4 @@
+// Returns resource from key
 function getResource(key) {
     switch(key.toLowerCase()) {
         case 'quotes':
