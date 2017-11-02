@@ -5,15 +5,16 @@
   "main": "bot.js",
   "author": "Darth Gaskomfur",
   "dependencies": {
-    "discord.js": "^11.2.1",
-    "winston": "^2.4.0",
-    "xml2js": "latest",
     "bufferutil": "^3.0.2",
+    "discord.js": "^11.2.1",
     "erlpack": "hammerandchisel/erlpack",
-    "node-opus": "^0.2.6",
-    "opusscript": "^0.0.3",
-    "sodium": "^2.0.1",
     "libsodium-wrappers": "^0.5.4",
-    "uws": "^0.14.5"
+    "node-gyp": "^3.6.2",
+    "node-opus": "^0.2.6",
+    "npm": "^5.5.1",
+    "opusscript": "^0.0.3",
+    "uws": "^0.14.5",
+    "winston": "^2.4.0",
+    "xml2js": "latest"
   }
 }
