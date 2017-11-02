@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <quotes>
-    <quote>Makker</quote>
+    <quote audiokey="Resources/Images/quotes/makker.mp3">Makker</quote>
     <quote>Tænk på børnene?</quote>
     <quote>Fuck børnene!</quote>
     <quote>Send nudes</quote>
@@ -33,7 +33,7 @@
     <quote>Kan du ikke tage mig i stedet for?</quote>
     <quote>Hva?</quote>
     <quote>Jeg skal nok give dig {indsæt synonym for pik her} hvis du fortsætter sådan her!</quote>
-    <quote>Father the cat is hungry!</quote>
+    <quote>Father cat is hungry!</quote>
     <quote>Har du ikke set den mel?</quote>
     <quote>Jeg vil gerne ind i dig!</quote>
     <quote>*sang* *sang* *skinger sang* *distortion* *sang*</quote>

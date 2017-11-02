@@ -7,6 +7,7 @@ const Utilities = require('./Resources/js/Utilities');
 var logger = require('winston');
 const auth = require('./Config/auth.json');
 const config = require('./Config/config.json');
+var isReady = true;
 
 // Initialize logger
 logger.remove(logger.transports.Console);
@@ -46,7 +47,7 @@ client.on('message', msg => {
     }
 
     // Check is message contains configures prefiks
-    if (msg.content.indexOf(config.prefix) === -1) {
+    if (msg.content.indexOf(config.prefix) === -1 || !isReady) {
         return;
     }
 
@@ -90,13 +91,23 @@ client.on('message', msg => {
                 break;
             case 'randombjørn':
                 var xmlDoc = xmlTools.getXmlFromFile(Resources.getResource('quotes')); // Reads xmlDoc from the Resources file
-                
+                console.log(xmlDoc.quotes.quote[0].$.audiokey)
                 msg.channel.send(Utilities.boxMessage(xmlDoc.quotes.quote[Utilities.randomNumber(xmlDoc['quotes']['quote'].length)])); // Returns random node
                 break;
             case 'ttsrandombjørn':
                 var xmlDoc = xmlTools.getXmlFromFile(Resources.getResource('quotes')); // Reads xmlDoc from the Resources file
                 msg.channel.send(Utilities.boxMessage(xmlDoc.quotes.quote[Utilities.randomNumber(xmlDoc['quotes']['quote'].length)]), {tts: true}); // Return random node, with tts enabled
                 break;
+            case 'randomrealbjørn':
+                isReady = false;
+                var voiceChannel = msg.member.voiceChannel;
+                var bjornXml = xmlTools.getXmlFromFile(Resources.getResource('quotes'));
+                var audioQuotePath = xmlDoc.quotes.quote[0].audioKey;
+
+                voiceChannel.join().then(connection =>
+                {
+                    const dispatcher = connection.playFile()
+                });
             case 'randomgame':
                 var ranNum = Utilities.randomNumber(args.length);
                 var game = args[ranNum]

@@ -1,12 +1,14 @@
 // Imports
 const fs = require('fs');
-var parseString = require('xml2js').parseString;
+var xml2js = require('xml2js');
+var parser = new xml2js.Parser();
 
 // Read xml from path and translate to js object
 function getXmlFromFile(path) {
     xmlString = fs.readFileSync(path, { encoding: 'utf-8' });
+    console.log(xmlString);
     var xmlDoc;
-    parseString(xmlString, function (err, result) {
+    parser.parseString(xmlString, function (err, result) {
         xmlDoc = result;
     });
     return xmlDoc;
