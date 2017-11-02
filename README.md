@@ -6,19 +6,20 @@ Discord bot made for the NSDAP Server.
 These applications are required to run the bot:
 
 [Node.js](https://nodejs.org/en/)
+[.Net 2.0](https://www.microsoft.com/en-us/download/details.aspx?id=15354)
 
-These javascript libraries are also needed for the bot to work:
+These npm libraries are also required for installing the dependencies:
 
-Discord.js
-
-```
-npm install --save discord.js
-```
-
-XML2JS
+Windows-Build-Tools:
 
 ```
-npm install xml2js
+npm install --global --production windows-build-tools
+```
+
+You should be able to run the following without any complications:
+
+```
+npm install
 ```
 
 ## Installation
@@ -31,7 +32,7 @@ To run the bot, just execute the included startbot.bat. This will open a command
 
 ## Authors
 
-* **Jens Rotne** - *Initial work* - [Mogitechh](https://github.com/Mogitech)
+* **Jens Rotne** - *Initial work* - [Mogitech](https://github.com/Mogitech)
 
 See also the list of [contributors](https://github.com/Mogitech/NSDAP-Bot/graphs/contributors) who participated in this project.
 
