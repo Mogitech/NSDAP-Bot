@@ -6,7 +6,6 @@ var parser = new xml2js.Parser();
 // Read xml from path and translate to js object
 function getXmlFromFile(path) {
     xmlString = fs.readFileSync(path, { encoding: 'utf-8' });
-    console.log(xmlString);
     var xmlDoc;
     parser.parseString(xmlString, function (err, result) {
         xmlDoc = result;
