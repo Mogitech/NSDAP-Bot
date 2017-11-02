@@ -9,7 +9,7 @@
     "winston": "^2.4.0",
     "xml2js": "latest",
     "bufferutil": "^3.0.2",
-    "erlpack": "^0.1.2",
+    "erlpack": "hammerandchisel/erlpack",
     "node-opus": "^0.2.6",
     "opusscript": "^0.0.3",
     "sodium": "^2.0.1",
