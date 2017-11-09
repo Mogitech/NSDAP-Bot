@@ -37,17 +37,20 @@ function randomNumber(max) {
 function checkIfImageExists(value) {
     switch (value.toLowerCase()) {
         case 'csgo':
+        case 'go':
+        case 'cs':
             return 'Resources/Images/Games/CSGO/CSGO.png'
         case 'rs6':
-            return 'Resources/Images/Games/SIEGE/RS6.png'
         case 'siege':
             return 'Resources/Images/Games/SIEGE/RS6.png'
         case 'pubg':
             return 'Resources/Images/Games/PUBG/PUBG.png'
         case 'rl':
-            return 'Resources/Images/Games/RL/RL.png'
         case 'rocketleague':
             return 'Resources/Images/Games/RL/RL.png'
+        case 'lol':
+        case 'league':
+            return 'Resources/Images/Games/LOL/LOL.png'
         default:
             return "None"
     }

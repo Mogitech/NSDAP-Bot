@@ -79,6 +79,14 @@ client.on('message', msg => {
                       {
                         name: "!randomgame {game} {game} ...",
                         value: "Picks a game from the arguments. Some of the arguments returns images, so please play around!"
+                      },
+                      {
+                          name: "!randomrealbjørn",
+                          value: "Plays a random audio recording of a random Bjørn quote"
+                      },
+                      {
+                          name: "!bagfra",
+                          value: "Try it and you shall see!"
                       }
                     ],
                     timestamp: new Date(),
@@ -91,12 +99,11 @@ client.on('message', msg => {
                 break;
             case 'randombjørn':
                 var xmlDoc = xmlTools.getXmlFromFile(Resources.getResource('quotes')); // Reads xmlDoc from the Resources file
-                console.log(xmlDoc.quotes.quote[0].$.audiokey)
-                msg.channel.send(Utilities.boxMessage(xmlDoc.quotes.quote[Utilities.randomNumber(xmlDoc['quotes']['quote'].length)])); // Returns random node
+                msg.channel.send(Utilities.boxMessage(xmlDoc.quotes.quote[Utilities.randomNumber(xmlDoc['quotes']['quote'].length - 1)])); // Returns random node
                 break;
             case 'ttsrandombjørn':
                 var xmlDoc = xmlTools.getXmlFromFile(Resources.getResource('quotes')); // Reads xmlDoc from the Resources file
-                msg.channel.send(Utilities.boxMessage(xmlDoc.quotes.quote[Utilities.randomNumber(xmlDoc['quotes']['quote'].length)]), {tts: true}); // Return random node, with tts enabled
+                msg.channel.send(Utilities.boxMessage(xmlDoc.quotes.quote[Utilities.randomNumber(xmlDoc['quotes']['quote'].length - 1)]), {tts: true}); // Return random node, with tts enabled
                 break;
             case 'randomrealbjørn':
                 isReady = false;
@@ -108,6 +115,18 @@ client.on('message', msg => {
                 voiceChannel.join().then(connection =>
                 {
                     const dispatcher = connection.playFile(audioQuotePath);
+                    dispatcher.on('end', end => {
+                        voiceChannel.leave();
+                    });
+                }).catch(err => console.log(err));
+                isReady = true;
+                break;
+            case 'bagfra':
+                isReady = false;
+                var voiceChannel = msg.member.voiceChannel;
+                voiceChannel.join().then(connection =>
+                {
+                    const dispatcher = connection.playFile(Resources.getResource('bagfra'));
                     dispatcher.on('end', end => {
                         voiceChannel.leave();
                     });
